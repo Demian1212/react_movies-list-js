@@ -8,22 +8,27 @@ export const MovieCard = ({ movie }) => {
     <div className="card" data-cy="Movie">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src={imgUrl} alt="Placeholder image" data-cy="MovieImage" />
+          <img src={imgUrl} alt={title} data-cy="MovieImage" />
         </figure>
       </div>
+
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <p className="title is-4" data-cy="MovieTitle">{title}</p>
+            <p className="title is-4" data-cy="MovieTitle">
+              {title}
+            </p>
           </div>
         </div>
 
-        <div className="content">
-          <p data-cy="MovieDescription">{description}</p>
+        <div className="content" data-cy="MovieDescription">
+          {description}
           <br />
-          <a href={imdbUrl} data-cy="MovieLink">IMDB</a>
+          <a href={imdbUrl} data-cy="MovieLink">IMDb</a>
         </div>
       </div>
     </div>
   );
 };
+
+export default MovieCard;
